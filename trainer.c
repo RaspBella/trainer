@@ -32,10 +32,10 @@ int main(void) {
   printf("Lines:\n");
 
   for (int i = 0; i < ARRAY_LEN(lines); ++i) {
-    printf("%s:\n", lines[i].name);
+    printf("  %s:\n", lines[i].name);
 
     for (int j = 0; j < lines[i].stations.count; ++j) {
-      printf("  %s\n", crs[lines[i].stations.xs[j]].name);
+      printf("    %s\n", crs[lines[i].stations.xs[j]].name);
     }
   }
 }

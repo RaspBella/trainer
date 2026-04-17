@@ -1,5 +1,5 @@
 LINE(
-  ___NBW___ " line",
+  ___NBW___ " branch",
   EDB,
   MUB,
   WAF,
@@ -7,4 +7,28 @@ LINE(
   LND,
   DRM,
   NBW
+)
+LINE(
+  ___SHS___ " line",
+  GLC,
+  CBL,
+  UDD,
+  BLH,
+  HLY,
+  CRF,
+  CEA,
+  HTW,
+  SHS,
+  FLD,
+  BRC,
+  ADW,
+  WCL,
+  LVG,
+  KKN,
+  CUH,
+  WTA,
+  KGE,
+  SLA,
+  HYM,
+  EDB
 )
