@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include "../crs.h"
 
-#define ARRAY_LEN(xs) sizeof(xs) / sizeof((xs)[0])
-
 struct array {
   int count;
   int *xs;
