@@ -27,11 +27,21 @@ struct line lines[] = {
 int main(void) {
   printf("Lines:\n");
 
-  for (int i = 0; i < ARRAY_LEN(lines); ++i) {
-    printf("  %s:\n", lines[i].name);
+  for (int l = 0; l < ARRAY_LEN(lines); ++l) {
+    printf("  %s:\n", lines[l].name);
 
-    for (int j = 0; lines[i].codes[j]; ++j) {
-      printf("    %s\n", lines[i].codes[j]);
+    for (int s = 0; lines[l].codes[s]; ++s) {
+      const char *code = lines[l].codes[s];
+
+      int i = code[0] - 'A';
+      int j = code[1] - 'A';
+      int k = code[2] - 'A';
+
+      printf(
+        "    %s (%s)\n",
+        *crs[i][j][k],
+        code
+      );
     }
   }
 }
