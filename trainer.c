@@ -2,24 +2,14 @@
 #include <stdio.h>
 #include "../crs.h"
 
-struct array {
-  int count;
-  int *xs;
-};
-
-#define ARRAY(...) (struct array) { \
-  .count = ARRAY_LEN(((int[]){__VA_ARGS__})), \
-  .xs = (int[]){__VA_ARGS__} \
-}
-
 struct line {
   const char *name;
-  struct array stations;
+  const char **codes;
 };
 
 #define LINE(NAME, ...) (struct line) { \
   .name = NAME, \
-  .stations = ARRAY(__VA_ARGS__) \
+  .codes = (const char *[]){ __VA_ARGS__ } \
 },
 
 int main(void) {
