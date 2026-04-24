@@ -4,7 +4,11 @@
 #include "../utils.h"
 
 #include "modes.h"
-#include "keybinds.h"
+
+enum input_mode input_mode;
+enum timing_mode timing_mode;
+enum timer timer;
+enum quiz_mode quiz_mode;
 
 struct line {
   const char *name;
@@ -13,19 +17,14 @@ struct line {
 
 #define LINE(NAME, ...) (struct line) { \
   .name = NAME, \
-  .codes = (const char *[]){ __VA_ARGS__ } \
+  .codes = (const char *[]){ __VA_ARGS__, NULL } \
 },
 
-enum input_mode input_mode;
-enum timing_mode timing_mode;
-enum timer timer;
-enum quiz_mode quiz_mode;
+struct line lines[] = {
+#include "lines.def"
+};
 
 int main(void) {
-  struct line lines[] = {
-#include "lines.def"
-  };
-
   printf("Lines:\n");
 
   for (int i = 0; i < ARRAY_LEN(lines); ++i) {
