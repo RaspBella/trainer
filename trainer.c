@@ -3,13 +3,6 @@
 #include "../crs.h"
 #include "../utils.h"
 
-#include "modes.h"
-
-enum input_mode input_mode;
-enum timing_mode timing_mode;
-enum timer timer;
-enum quiz_mode quiz_mode;
-
 struct line {
   const char *name;
   const char **codes;
